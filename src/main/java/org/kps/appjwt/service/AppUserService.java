@@ -14,4 +14,6 @@ public interface AppUserService extends UserDetailsService {
     AppUserDto registerUser(AppUserRequest appUserRequest);
 
     String verifyOtp(String email, String otp);
+
+    String resendOtp(String email);
 }

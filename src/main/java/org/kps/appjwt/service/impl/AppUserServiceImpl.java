@@ -49,4 +49,9 @@ public class AppUserServiceImpl implements AppUserService {
     public String verifyOtp(String email, String otp) {
         return "";
     }
+
+    @Override
+    public String resendOtp(String email) {
+        return "";
+    }
 }
