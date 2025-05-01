@@ -12,4 +12,8 @@ public interface AppUserService extends UserDetailsService {
     UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 
     AppUserDto registerUser(AppUserRequest appUserRequest);
+
+    String verifyOtp(String email, String otp);
+
+    String resendOtp(String email);
 }

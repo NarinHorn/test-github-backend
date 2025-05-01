@@ -44,4 +44,14 @@ public class AppUserServiceImpl implements AppUserService {
 
         return modelMapper.map(appUserRepository.findUserByUserId(userId), AppUserDto.class);
     }
+
+    @Override
+    public String verifyOtp(String email, String otp) {
+        return "";
+    }
+
+    @Override
+    public String resendOtp(String email) {
+        return "";
+    }
 }

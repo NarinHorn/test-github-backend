@@ -21,4 +21,20 @@ public class AppUserController {
     public ResponseEntity<?> registerUser(@RequestBody AppUserRequest appUserRequest) {
         return ResponseEntity.ok(appUserService.registerUser(appUserRequest));
     }
+
+    @Operation(
+            summary = "Verify OTP"
+    )
+    @PostMapping("/verify")
+    public ResponseEntity<?> verifyOtp(@RequestParam String email, @RequestParam String otp) {
+        return ResponseEntity.ok(appUserService.verifyOtp(email, otp));
+    }
+
+    @Operation(
+            summary = "Resend OTP"
+    )
+    @PostMapping("/resendOtp")
+    public ResponseEntity<?> resendOtp(@RequestParam String email) {
+        return ResponseEntity.ok(appUserService.resendOtp(email));
+    }
 }
