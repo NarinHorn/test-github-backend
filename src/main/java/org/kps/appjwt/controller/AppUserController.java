@@ -31,6 +31,14 @@ public class AppUserController {
     }
 
     @Operation(
+            summary = "Verify OTP Reset Password"
+    )
+    @PostMapping("/verify-resetPassword")
+    public ResponseEntity<?> verifyOtpResetPassword(@RequestParam String email, @RequestParam String otp) {
+        return ResponseEntity.ok(appUserService.verifyOtp(email, otp));
+    }
+
+    @Operation(
             summary = "Resend OTP"
     )
     @PostMapping("/resendOtp")
